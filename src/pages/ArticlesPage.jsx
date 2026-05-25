@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { fetchArticles } from '../services/api';
 import Loader from "../components/Loader";
+import Pagination from '../components/Pagination';
 
 
 function ArticlesPage() {
@@ -87,28 +88,13 @@ function ArticlesPage() {
           </div>
         ))}
       </div>
-
       {/* Pagination */}
-      <div className="pagination">
-        {Array.from(
-          { length: totalPages },
-          (_, index) => (
-            <button
-              key={index}
-              onClick={() =>
-                setPage(index + 1)
-              }
-              className={
-                page === index + 1
-                  ? 'pagination__button active'
-                  : 'pagination__button'
-              }
-            >
-              {index + 1}
-            </button>
-          )
-        )}
-      </div>
+       <Pagination 
+       totalPages={totalPages}
+        page={page} 
+        setPage={setPage} />
+      
+      
     </div>
   );
 }

@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -122,4 +122,127 @@ a {
 .loader-container p {
   font-size: 40px;
   color: #61BB61;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* MAIN PAGE */
+.articles-page {
+  max-width: 938px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* BANNER */
+.banner {
+  background: #5cb85c;
+  padding: 48px 20px;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.banner__title {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+
+  text-shadow: 0 4px px rgba(0, 0, 0, 0.2);
+}
+
+.banner__text {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+/* ARTICLES */
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* CARD */
+.article-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.article-card__title {
+  color: #222;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.article-card__description {
+  color: #999;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.pagination__button {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #61BB61;
+
+  background: white;
+  color: #61BB61;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.pagination__button.active {
+  background: #61BB61;
+  color: white;
+}
+
+/* LOADER */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loader-icon {
+  font-size: 50px;
+  color: #61BB61;
+}
+
+.loader-container p {
+  font-size: 40px;
+  color: #61BB61;
+}
+
