@@ -3,13 +3,12 @@ import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 import { fetchSingleArticle } from '../services/api';
+import Loader from '../components/Loader';
 
 function SingleArticlePage() {
-  const { slug } = useParams();
+  const { slug } = useParams()
 
   const [article, setArticle] = useState(null);
-
-  // ADD THIS
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -17,28 +16,17 @@ function SingleArticlePage() {
       .then((data) => {
         setArticle(data.article);
       })
-
-      // ADD THIS
       .catch((err) => {
-        setError(
-          'Failed to load the article.'
-        );
-
+        setError('Failed to load the article.');
         console.error(err);
       });
   }, [slug]);
 
-  // ADD THIS
-  if (error) {
-    return <h2>{error}</h2>;
-  }
-
-  if (!article) {
-    return <h2>Loading...</h2>;
-  }
+  if (error) return <h2>{error}</h2>;
+  if (!article) return <Loader />;
 
   return (
-    <div>
+    <div className="single-article-page">
       <h1>{article.title}</h1>
 
       <ReactMarkdown>
@@ -49,3 +37,4 @@ function SingleArticlePage() {
 }
 
 export default SingleArticlePage;
+
